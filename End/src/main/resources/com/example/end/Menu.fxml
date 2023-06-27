@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="327.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.end.Menu">
+   <children>
+      <ImageView fitHeight="327.0" fitWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@ca04d2a7e579e57733732e05c9df65ba.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3b4053" height="18.0" layoutX="110.0" layoutY="298.0" stroke="BLACK" strokeType="INSIDE" width="349.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="110.0" />
+      <Rectangle fx:id="load" arcHeight="5.0" arcWidth="5.0" fill="#170733" height="18.0" layoutX="109.0" layoutY="298.0" onScroll="#open" stroke="BLACK" strokeType="INSIDE" width="18.0" />
+   </children>
+   <effect>
+      <InnerShadow choke="0.16" height="107.61" radius="53.305" width="107.61">
+         <color>
+            <Color red="0.05172189697623253" green="0.007797271013259888" blue="0.21052631735801697" />
+         </color>
+      </InnerShadow>
+   </effect>
+</AnchorPane>

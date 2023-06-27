@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="327.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.end.MenuLogSigh">
+   <children>
+      <ImageView fitHeight="327.0" fitWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@ca04d2a7e579e57733732e05c9df65ba.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="log" layoutX="203.0" layoutY="276.0" mnemonicParsing="false" onMouseClicked="#log" prefHeight="27.0" prefWidth="64.0" text="Log In">
+         <font>
+            <Font name="Monospaced Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow choke="0.36" height="58.71" radius="28.2725" width="56.38">
+               <color>
+                  <Color red="0.046224821358919144" green="7.797271246090531E-4" blue="0.21052631735801697" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button fx:id="sigh" layoutX="277.0" layoutY="276.0" mnemonicParsing="false" onMouseClicked="#sigh" prefHeight="27.0" prefWidth="64.0" text="Sigh In">
+         <font>
+            <Font name="Monospaced Bold Italic" size="11.0" />
+         </font>
+         <effect>
+            <InnerShadow choke="0.36" height="58.71" radius="28.2725" width="56.38">
+               <color>
+                  <Color red="0.046224821358919144" green="7.797271246090531E-4" blue="0.21052631735801697" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
