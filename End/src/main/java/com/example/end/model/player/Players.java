@@ -1,6 +1,6 @@
 package com.example.end.model.player;
 
-import com.example.demo.Model.Player.Player;
+import com.example.end.model.player.Player;
 import com.example.end.model.player.Player;
 
 import java.util.ArrayList;

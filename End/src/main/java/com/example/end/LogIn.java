@@ -1,7 +1,7 @@
 package com.example.end;
 
-import com.example.demo.Model.Player.Player;
-import com.example.demo.Model.Player.Players;
+import com.example.end.model.player.Player;
+import com.example.end.model.player.Players;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
