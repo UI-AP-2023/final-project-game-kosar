@@ -1,12 +1,13 @@
-package com.example.end;
+package com.example.controller;
 
+import com.example.HelloApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -21,18 +22,18 @@ public class MenuLogSigh implements Initializable {
     }
     @FXML
     void log(MouseEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("LogIn.fxml")));
-        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-        Scene scene = new Scene(parent);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("LogIn.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
     }
 
     @FXML
     void sigh(MouseEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SighIn.fxml")));
-        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-        Scene scene = new Scene(parent);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighIn.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
     }

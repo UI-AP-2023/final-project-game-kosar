@@ -1,4 +1,4 @@
-package com.example.end;
+package com.example.controller;
 
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;

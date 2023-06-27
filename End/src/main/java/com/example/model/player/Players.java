@@ -1,7 +1,4 @@
-package com.example.end.model.player;
-
-import com.example.end.model.player.Player;
-import com.example.end.model.player.Player;
+package com.example.model.player;
 
 import java.util.ArrayList;
 

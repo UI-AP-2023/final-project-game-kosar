@@ -1,7 +1,8 @@
-package com.example.end;
+package com.example.controller;
 
-import com.example.end.model.player.Player;
-import com.example.end.model.player.Players;
+import com.example.HelloApplication;
+import com.example.model.player.Player;
+import com.example.model.player.Players;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -54,9 +55,9 @@ public class SighIn implements Initializable {
                 if (matcher.find()) {
                     Player player = new Player(userName , password);
                     Players.setPlayers(player);
-                    Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
-                    Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                    Scene scene = new Scene(parent);
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load());
+                    Stage stage = new Stage();
                     stage.setScene(scene);
                     stage.show();
                 } else {
@@ -70,9 +71,9 @@ public class SighIn implements Initializable {
             Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#]).{8,20}$");
             Matcher matcher = pattern.matcher(password);
             if (matcher.find()) {
-                Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
-                Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-                Scene scene = new Scene(parent);
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage stage = new Stage();
                 stage.setScene(scene);
                 stage.show();
             } else {
@@ -87,9 +88,9 @@ public class SighIn implements Initializable {
 
     @FXML
     void back(MouseEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SighLog.fxml")));
-        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
-        Scene scene = new Scene(parent);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighLog.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
     }

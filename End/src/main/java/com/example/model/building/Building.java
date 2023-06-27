@@ -1,4 +1,4 @@
-package com.example.end.model.building;
+package com.example.model.building;
 
 import javafx.scene.image.ImageView;
 

@@ -1,4 +1,4 @@
-package com.example.end.model.building;
+package com.example.model.building;
 
 public class Location {
     private final int firstX ;

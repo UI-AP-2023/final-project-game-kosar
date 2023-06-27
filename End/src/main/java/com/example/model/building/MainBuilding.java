@@ -1,17 +1,16 @@
-package com.example.end.model.building;
+package com.example.model.building;
 
 import javafx.scene.image.ImageView;
 
 import java.io.File;
 
-public class NormalBuilding extends Building {
-
-    public NormalBuilding(Location location) {
+public class MainBuilding extends Building {
+    public MainBuilding(Location location) {
         super(location);
         setDefensive(false);
-        setHealth(50);
+        setHealth(80);
         setImageView(new ImageView(new File(
-                "P:\\Kosar\\final-project-pishi-nini\\demo\\src\\main\\resources\\com\\example\\demo\\Building1.jpg")
+                "P:\\Kosar\\final-project-pishi-nini\\demo\\src\\main\\resources\\com\\example\\demo\\Building2.jpg")
                 .toURI().toString()));
     }
 

@@ -1,4 +1,4 @@
-package com.example.end.model.player;
+package com.example.model.player;
 
 public class Player {
     private final String id;
