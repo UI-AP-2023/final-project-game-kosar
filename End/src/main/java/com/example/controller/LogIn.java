@@ -63,12 +63,5 @@ public class LogIn implements Initializable {
             alert.showAndWait();
         }
     }
-    @FXML
-    void back(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighLog.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-    }
+
 }

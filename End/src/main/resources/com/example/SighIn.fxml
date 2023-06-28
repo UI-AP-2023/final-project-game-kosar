@@ -11,7 +11,6 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="327.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.SighIn">
    <children>
       <ImageView fitHeight="327.0" fitWidth="569.0" layoutX="158.0" layoutY="98.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -49,19 +48,7 @@
             </InnerShadow>
          </effect>
       </TextField>
-      <Button layoutX="220.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#submit" text="Submit" textFill="#0d0c4b">
-         <font>
-            <Font name="Monospaced Bold" size="13.0" />
-         </font>
-         <effect>
-            <InnerShadow choke="0.06" height="35.09" radius="19.385" width="44.45">
-               <color>
-                  <Color red="0.24214035272598267" green="0.19068226218223572" blue="0.7052631378173828" />
-               </color>
-            </InnerShadow>
-         </effect>
-      </Button>
-      <Button layoutX="307.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#back" prefHeight="24.0" prefWidth="65.0" text="Back" textFill="#0d0c4b">
+      <Button layoutX="252.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#submit" text="Submit" textFill="#0d0c4b">
          <font>
             <Font name="Monospaced Bold" size="13.0" />
          </font>

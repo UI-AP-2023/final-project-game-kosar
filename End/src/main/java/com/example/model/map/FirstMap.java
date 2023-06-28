@@ -60,6 +60,4 @@ public class FirstMap extends Map implements Initializable {
         setBuildings(buildings);
     }
 
-    @FXML
-    private ImageView main;
 }

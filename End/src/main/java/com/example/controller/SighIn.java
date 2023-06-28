@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.HelloApplication;
 import com.example.model.player.Player;
 import com.example.model.player.Players;
+import com.example.model.player.ThisPlayer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -55,6 +56,7 @@ public class SighIn implements Initializable {
                 if (matcher.find()) {
                     Player player = new Player(userName , password);
                     Players.setPlayers(player);
+                    ThisPlayer.setPlayer(player);
                     FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
                     Scene scene = new Scene(fxmlLoader.load());
                     Stage stage = new Stage();
@@ -71,6 +73,9 @@ public class SighIn implements Initializable {
             Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#]).{8,20}$");
             Matcher matcher = pattern.matcher(password);
             if (matcher.find()) {
+                Player player = new Player(userName , password);
+                Players.setPlayers(player);
+                ThisPlayer.setPlayer(player);
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
                 Stage stage = new Stage();
@@ -84,15 +89,6 @@ public class SighIn implements Initializable {
             }
         }
 
-    }
-
-    @FXML
-    void back(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighLog.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
     }
 
 }

@@ -10,7 +10,7 @@ public class BombBuilding extends Building implements defenceDuilding {
         super(location);
         setDefensive(true);
         setHealth(40);
-        attackPower = 5;
+        attackPower = 3;
         speed = 4000;
         setImageView(new ImageView(new File(
                 "P:\\Kosar\\final-project-pishi-nini\\demo\\src\\main\\resources\\com\\example\\demo\\Building3.jpg")

@@ -13,15 +13,11 @@ import java.time.Duration;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Menu.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 569, 327);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighLog.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
 
-        fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighLog.fxml"));
-        scene = new Scene(fxmlLoader.load(), 569, 327);
-        stage.setScene(scene);
-        stage.show();
 
         Player player = new Player("1","1");
         Players.setPlayers(player);
