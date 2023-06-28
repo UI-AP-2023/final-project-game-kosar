@@ -55,7 +55,7 @@ public class SighIn implements Initializable {
                 if (matcher.find()) {
                     Player player = new Player(userName , password);
                     Players.setPlayers(player);
-                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
                     Scene scene = new Scene(fxmlLoader.load());
                     Stage stage = new Stage();
                     stage.setScene(scene);
@@ -71,7 +71,7 @@ public class SighIn implements Initializable {
             Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#]).{8,20}$");
             Matcher matcher = pattern.matcher(password);
             if (matcher.find()) {
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
                 Stage stage = new Stage();
                 stage.setScene(scene);

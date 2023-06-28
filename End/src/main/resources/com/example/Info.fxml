@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="327.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.Info">
+   <children>
+      <ImageView fitHeight="327.0" fitWidth="569.0" layoutX="210.0" layoutY="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@6d2562a0a86aecbd1de72c82982c68eb.jpg" />
+         </image>
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ImageView>
+      <Text fill="#480000" layoutX="53.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName">
+         <font>
+            <Font name="Monospaced Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#480000" layoutX="53.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Win">
+         <font>
+            <Font name="Monospaced Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#480000" layoutX="53.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lost">
+         <font>
+            <Font name="Monospaced Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#480000" layoutX="53.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font name="Monospaced Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="userName" fill="#480000" layoutX="221.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Monospaced Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="password" fill="#480000" layoutX="221.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Monospaced Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="win" fill="#480000" layoutX="221.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Monospaced Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="lost" fill="#480000" layoutX="221.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Monospaced Bold" size="23.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

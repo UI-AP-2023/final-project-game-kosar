@@ -1,18 +1,19 @@
 package com.example.model.player;
 
+import com.example.model.map.Map;
+
 public class Player {
     private final String id;
     private final String password;
     private int level;
-    private int win;
-    private int lost;
+    private int win = 0;
+    private int lost = 0;
 
-    public Player(String id, String password) {
+    private Map map ;
+    public Player(String id, String password ) {
         this.id = id;
         this.password = password;
         this.level = 1;/////////////////////////////////////////////////starrr
-        this.lost = 0;
-        this.win = 0;
     }
 
     public String getPassword() {
@@ -21,5 +22,21 @@ public class Player {
 
     public String getId() {
         return id;
+    }
+
+    public void setLost(int lost) {
+        this.lost = lost;
+    }
+
+    public void setWin(int win) {
+        this.win = win;
+    }
+
+    public int getWin() {
+        return win;
+    }
+
+    public int getLost() {
+        return lost;
     }
 }

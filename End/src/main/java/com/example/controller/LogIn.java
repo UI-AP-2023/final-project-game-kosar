@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.HelloApplication;
 import com.example.model.player.Player;
 import com.example.model.player.Players;
+import com.example.model.player.ThisPlayer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -38,7 +39,9 @@ public class LogIn implements Initializable {
         for (Player player : Players.getPlayers()) {
             if (player.getId().equals(userName)) {
                 if ( player.getPassword().equals(password)){
-                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+                    ThisPlayer.setPlayer(player);
+                    System.out.println(ThisPlayer.getPlayer().getId());
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
                     Scene scene = new Scene(fxmlLoader.load());
                     Stage stage = new Stage();
                     stage.setScene(scene);

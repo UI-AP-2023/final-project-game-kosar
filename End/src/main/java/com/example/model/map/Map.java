@@ -2,10 +2,11 @@ package com.example.model.map;
 
 
 import com.example.model.building.Building;
+import javafx.fxml.Initializable;
 
 import java.util.ArrayList;
 
-abstract public class Map {
+abstract public class Map implements Initializable {
     private final String name;
     private ArrayList<Building> buildings ;
     Map(String name) {
