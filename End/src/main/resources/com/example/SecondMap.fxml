@@ -7,7 +7,7 @@
 <?import javafx.scene.paint.Color?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" stylesheets="@../../../java/com/example/CssStyle/FirstMap.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.model.map.SecondMap">
+<AnchorPane prefHeight="400.0" prefWidth="400.0" stylesheets="@../../../java/com/example/CssStyle/FirstMap.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.map.SecondMap">
    <children>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="150.0" layoutY="150.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="150.0">
          <image>

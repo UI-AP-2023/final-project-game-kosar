@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="327.0" prefWidth="569.0" stylesheets="@../../../java/com/example/CssStyle/FirstMap.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.Panel">
+<AnchorPane prefHeight="327.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.Panel">
    <effect>
       <ColorAdjust brightness="0.21" contrast="0.07" />
    </effect>
@@ -29,6 +29,11 @@
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="455.0" layoutY="213.0" onMouseClicked="#info">
          <image>
             <Image url="@computer-icons-user-profile-material-design-profile-d6a8d1ffc84df96878c4b1f439c68f06.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="173.0" fitWidth="355.0" layoutX="100.0" layoutY="60.0">
+         <image>
+            <Image url="@2d75df875fc74243beb91d2a75b13008.jpg" />
          </image>
       </ImageView>
    </children>

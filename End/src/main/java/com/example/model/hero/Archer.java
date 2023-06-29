@@ -5,13 +5,15 @@ import javafx.scene.image.ImageView;
 
 import java.io.File;
 
-public class Archer extends Hero {
+public class Archer extends Hero implements Shot {
+    private int redius;
 
     public Archer(Location location) {
         super(location);
         setName("Archer");
         setHealth(10);
         setPower(3);
+        this.redius = 15;
         setTimeBetween(2000);
         //////////////////////////////////////////////setSpeed();
         setImageView(new ImageView(new File(

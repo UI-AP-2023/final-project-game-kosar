@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.model.map.ThirdMap"
+            fx:controller="com.example.controller.MapB"
             prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>

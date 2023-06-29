@@ -57,9 +57,9 @@ public class SighIn implements Initializable {
                     Player player = new Player(userName , password);
                     Players.setPlayers(player);
                     ThisPlayer.setPlayer(player);
-                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ChoseMap.fxml"));
                     Scene scene = new Scene(fxmlLoader.load());
-                    Stage stage = new Stage();
+                    Stage stage = (Stage) ((Node)(event.getSource())).getScene().getWindow();
                     stage.setScene(scene);
                     stage.show();
                 } else {
@@ -76,9 +76,9 @@ public class SighIn implements Initializable {
                 Player player = new Player(userName , password);
                 Players.setPlayers(player);
                 ThisPlayer.setPlayer(player);
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ChoseMap.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
-                Stage stage = new Stage();
+                Stage stage = (Stage) ((Node)(event.getSource())).getScene().getWindow();
                 stage.setScene(scene);
                 stage.show();
             } else {
@@ -89,6 +89,14 @@ public class SighIn implements Initializable {
             }
         }
 
+    }
+    @FXML
+    void back(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighLog.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node)(event.getSource())).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

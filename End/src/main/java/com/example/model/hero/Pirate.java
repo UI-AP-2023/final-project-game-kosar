@@ -5,11 +5,13 @@ import javafx.scene.image.ImageView;
 
 import java.io.File;
 
-public class Pirate extends Hero{
+public class Pirate extends Hero implements Shot{
+    private int redius;
     public Pirate(Location location) {
         super(location);
         setName("Pirate");
         setHealth(10);
+        redius = 20;
         setPower(2);
         setTimeBetween(1500);
         //////////////////////////////////////////////setSpeed();

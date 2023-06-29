@@ -43,7 +43,7 @@ public class LogIn implements Initializable {
                     System.out.println(ThisPlayer.getPlayer().getId());
                     FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
                     Scene scene = new Scene(fxmlLoader.load());
-                    Stage stage = new Stage();
+                    Stage stage = (Stage) ((Node)(event.getSource())).getScene().getWindow();
                     stage.setScene(scene);
                     stage.show();
                 }else {
@@ -64,4 +64,12 @@ public class LogIn implements Initializable {
         }
     }
 
+    @FXML
+    void back(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighLog.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node)(event.getSource())).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="327.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ChoseMap">
+   <children>
+      <ImageView fitHeight="165.0" fitWidth="200.0" onMouseClicked="#mapB" AnchorPane.bottomAnchor="167.49289245605468" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@MapB.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="A" fitHeight="167.0" fitWidth="200.0" layoutY="165.0" onMouseClicked="#mapA" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <image>
+            <Image url="@MapA.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="212.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pick one">
+         <font>
+            <Font name="Monospaced Bold" size="30.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="165.0" fitWidth="200.0" layoutX="370.0" layoutY="164.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@MapA.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="165.0" fitWidth="200.0" layoutX="372.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@MapA.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="165.0" fitWidth="171.0" layoutX="199.0">
+         <image>
+            <Image url="@rha1s4v4ldbj3us8m28ohm4pj3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="165.0" fitWidth="171.0" layoutX="199.0" layoutY="164.0" rotate="180.0">
+         <image>
+            <Image url="@rha1s4v4ldbj3us8m28ohm4pj3.png" />
+         </image>
+      </ImageView>
+      <Line endX="100.0" layoutX="99.0" layoutY="165.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="469.0" layoutY="166.0" startX="-100.0" />
+      <Line endX="-114.00003051757812" endY="164.99996948242188" layoutX="313.0" layoutY="164.0" startX="-113.00003051757812" startY="-164.0" />
+      <Line endX="-114.00003051757812" endY="164.99996948242188" layoutX="483.0" layoutY="166.0" startX="-113.00003051757812" startY="-164.0" />
+   </children>
+</AnchorPane>

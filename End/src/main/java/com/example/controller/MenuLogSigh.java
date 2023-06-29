@@ -24,7 +24,7 @@ public class MenuLogSigh implements Initializable {
     void log(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("LogIn.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
+        Stage stage = (Stage) ((Node)(event.getSource())).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
@@ -33,7 +33,7 @@ public class MenuLogSigh implements Initializable {
     void sigh(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighIn.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
+        Stage stage = (Stage) ((Node)(event.getSource())).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
