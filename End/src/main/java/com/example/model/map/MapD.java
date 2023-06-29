@@ -45,5 +45,7 @@ public class MapD extends Map {
 
         setBuildings(buildings);
         setName("D");
+        setNumberOfHero(17);
+
     }
 }

@@ -3,13 +3,11 @@ package com.example.controller;
 import com.example.HelloApplication;
 import com.example.model.player.Player;
 import com.example.model.player.Players;
-import com.example.model.player.ThisPlayer;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 

@@ -5,7 +5,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="327.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.Panel">
    <effect>
       <ColorAdjust brightness="0.21" contrast="0.07" />
@@ -34,6 +33,11 @@
       <ImageView fitHeight="173.0" fitWidth="355.0" layoutX="100.0" layoutY="60.0">
          <image>
             <Image url="@2d75df875fc74243beb91d2a75b13008.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="248.0" layoutY="263.0" onMouseClicked="#logOut">
+         <image>
+            <Image url="@Red.png" />
          </image>
       </ImageView>
    </children>

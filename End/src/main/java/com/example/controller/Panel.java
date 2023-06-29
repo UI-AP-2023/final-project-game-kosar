@@ -1,19 +1,18 @@
 package com.example.controller;
 
 import com.example.HelloApplication;
-import com.example.model.player.ThisPlayer;
+import com.example.model.player.Player;
+import com.example.model.player.Players;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Panel implements Initializable {
@@ -23,14 +22,34 @@ public class Panel implements Initializable {
     }
 
     @FXML
-    void attack(MouseEvent event) {
-
+    void attack(MouseEvent event) throws IOException {
+        ThisPlayer.setIndexEnemy(0);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Attack.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    void hero(MouseEvent event) {
-
+    void hero(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Heros.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
+
+    @FXML
+    void logOut(MouseEvent event) throws IOException {
+        ThisPlayer.setPlayer(null);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighLog.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
     @FXML
     void info(MouseEvent event) throws IOException {
@@ -44,7 +63,6 @@ public class Panel implements Initializable {
     @FXML
     void map(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = null;
-        System.out.println(ThisPlayer.getPlayer().getMap().getName());
         if (ThisPlayer.getPlayer().getMap().getName().equals("A")) {
             fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MapA.fxml"));
         } else if (ThisPlayer.getPlayer().getMap().getName().equals("B")) {

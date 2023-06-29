@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import com.example.model.player.ThisPlayer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.text.Text;

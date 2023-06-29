@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.controller.Attack"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="327.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.Attack">
+   <children>
+      <ImageView fx:id="map" fitHeight="327.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fill="#6b6600" layoutX="361.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number Of Heros">
+         <font>
+            <Font name="Monospaced Bold Italic" size="16.0" />
+         </font>
+      </Text>
+      <Line endX="78.5999755859375" endY="-1.52587890625E-5" layoutX="461.0" layoutY="87.0" startX="-100.0">
+         <effect>
+            <InnerShadow height="156.69" radius="43.9225">
+               <color>
+                  <Color red="0.2605263292789459" green="0.34736841917037964" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Line>
+      <Text fx:id="number" fill="#6b6600" layoutX="491.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="48.02191162109375">
+         <font>
+            <Font name="Monospaced Bold Italic" size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="501.0" layoutY="263.0" mnemonicParsing="false" onMouseClicked="#next" text="&gt;&gt;" textFill="#7b7302">
+         <font>
+            <Font name="Monospaced Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="362.0" layoutY="263.0" mnemonicParsing="false" onMouseClicked="#before" text="&lt;&lt;" textFill="#7b7302">
+         <font>
+            <Font name="Monospaced Bold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="60.0" fitWidth="86.0" layoutX="407.0" layoutY="249.0" onMouseClicked="#back">
+         <image>
+            <Image url="@Red.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="144.0" layoutX="378.0" layoutY="111.0" onMouseClicked="#fight">
+         <image>
+            <Image url="@sword-weapon-download-icon-swords-dc61dca3c89bc340096370658ec3fe58.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <InnerShadow choke="0.16" height="100.0" radius="49.5" width="100.0">
+         <color>
+            <Color red="0.42105263471603394" green="0.4140350818634033" />
+         </color>
+      </InnerShadow>
+   </effect>
 </AnchorPane>

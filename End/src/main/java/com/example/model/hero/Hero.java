@@ -43,4 +43,8 @@ abstract public class Hero {
     public void setTimeBetween(long timeBetween) {
         this.timeBetween = timeBetween;
     }
+
+    public ImageView getImageView() {
+        return imageView;
+    }
 }
