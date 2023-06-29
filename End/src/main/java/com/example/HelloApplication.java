@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.model.map.MapA;
 import com.example.model.player.Player;
 import com.example.model.player.Players;
 import javafx.application.Application;
@@ -20,6 +21,7 @@ public class HelloApplication extends Application {
 
 
         Player player = new Player("1","1");
+        player.setMap(new MapA());
         Players.setPlayers(player);
     }
     public static void main(String[] args) {

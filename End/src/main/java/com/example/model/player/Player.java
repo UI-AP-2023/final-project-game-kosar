@@ -1,5 +1,6 @@
 package com.example.model.player;
-import com.example.controller.Map;
+
+import com.example.model.map.Map;
 
 public class Player {
     private final String id;

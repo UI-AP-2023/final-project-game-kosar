@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.HelloApplication;
+import com.example.model.player.ThisPlayer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,6 +21,7 @@ public class Panel implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
     @FXML
     void attack(MouseEvent event) {
 
@@ -41,10 +43,21 @@ public class Panel implements Initializable {
 
     @FXML
     void map(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("LogIn.fxml"));
+        FXMLLoader fxmlLoader = null;
+        System.out.println(ThisPlayer.getPlayer().getMap().getName());
+        if (ThisPlayer.getPlayer().getMap().getName().equals("A")) {
+            fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MapA.fxml"));
+        } else if (ThisPlayer.getPlayer().getMap().getName().equals("B")) {
+            fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MapB.fxml"));
+        } else if (ThisPlayer.getPlayer().getMap().getName().equals("C")) {
+            fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MapC.fxml"));
+        } else if (ThisPlayer.getPlayer().getMap().getName().equals("D")) {
+            fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MapD.fxml"));
+        }
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+
     }
 }

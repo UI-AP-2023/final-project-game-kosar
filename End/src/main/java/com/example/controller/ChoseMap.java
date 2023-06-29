@@ -24,10 +24,10 @@ public class ChoseMap implements Initializable {
     }
     @FXML
     void mapA(MouseEvent event) throws IOException {
-        ThisPlayer.getPlayer().setMap(new MapA());
+        ThisPlayer.getPlayer().setMap(new com.example.model.map.MapA());
         for (Player player : Players.getPlayers()){
             if ( player.equals(ThisPlayer.getPlayer())){
-                player.setMap(new MapA());
+                player.setMap(new com.example.model.map.MapA());
             }
         }
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
@@ -39,10 +39,24 @@ public class ChoseMap implements Initializable {
 
     @FXML
     void mapB(MouseEvent event) throws IOException {
-        ThisPlayer.getPlayer().setMap(new MapB());
+        ThisPlayer.getPlayer().setMap(new com.example.model.map.MapB());
         for (Player player : Players.getPlayers()){
             if ( player.equals(ThisPlayer.getPlayer())){
-                player.setMap(new MapB());
+                player.setMap(new com.example.model.map.MapB());
+            }
+        }
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node)(event.getSource())).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void mapC(MouseEvent event) throws IOException {
+        ThisPlayer.getPlayer().setMap(new com.example.model.map.MapC());
+        for (Player player : Players.getPlayers()){
+            if ( player.equals(ThisPlayer.getPlayer())){
+                player.setMap(new com.example.model.map.MapC());
             }
         }
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
@@ -52,4 +66,18 @@ public class ChoseMap implements Initializable {
         stage.show();
     }
 
+    @FXML
+    void mapD(MouseEvent event) throws IOException {
+        ThisPlayer.getPlayer().setMap(new com.example.model.map.MapD());
+        for (Player player : Players.getPlayers()){
+            if ( player.equals(ThisPlayer.getPlayer())){
+                player.setMap(new com.example.model.map.MapD());
+            }
+        }
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node)(event.getSource())).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }

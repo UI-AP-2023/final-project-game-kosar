@@ -1,17 +1,10 @@
-package com.example.controller;
+package com.example.model.map;
 
 import com.example.model.building.Building;
-import javafx.fxml.Initializable;
 
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
-public abstract class Map implements Initializable {
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
+public class Map {
 
     private String name;
     private ArrayList<Building> buildings = new ArrayList<>();
