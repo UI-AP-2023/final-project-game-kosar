@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -25,8 +26,7 @@ public class Attack implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         number.setText("" + Players.getPlayers().get(ThisPlayer.getIndexEnemy()).getMap().getNumberOfHero());
         if (ThisPlayer.getPlayer().getMap().getName().equals("A")) {
-            Location location = new Location(1, 2, 3, 4);
-            map.setImage(new Archer(location).getImageView().getImage());
+        ///   map.setImage(new Image("MapA.png"));
         } else if (ThisPlayer.getPlayer().getMap().getName().equals("B")) {
         } else if (ThisPlayer.getPlayer().getMap().getName().equals("C")) {
         } else if (ThisPlayer.getPlayer().getMap().getName().equals("D")) {
@@ -62,8 +62,13 @@ public class Attack implements Initializable {
     }
 
     @FXML
-    void fight(MouseEvent event) {
-
+    void fight(MouseEvent event) throws IOException {
+        ThisPlayer.setMap(Players.getPlayers().get(ThisPlayer.getIndexEnemy()).getMap());
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ChoseHero.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

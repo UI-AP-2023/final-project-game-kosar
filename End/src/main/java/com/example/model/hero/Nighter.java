@@ -5,18 +5,17 @@ import javafx.scene.image.ImageView;
 
 import java.io.File;
 
-public class Pirate extends Hero implements Shot{
-    private int redius;
-    public Pirate(Location location) {
+public class Nighter extends Hero {
+
+    public Nighter(Location location) {
         super(location);
-        setName("Pirate");
+        setName("Knight Hing");
         setHealth(10);
-        redius = 20;
-        setPower(2);
+        setPower(4);
         setTimeBetween(1500);
         //////////////////////////////////////////////setSpeed();
         setImageView(new ImageView(new File(
-                "P:\\Kosar\\final-project-pishi-nini\\demo\\src\\main\\resources\\com\\example\\demo\\Pirate.png")
+                "P:\\Kosar\\final-project-pishi-nini\\demo\\src\\main\\resources\\com\\example\\demo\\1_knight_.png")
                 .toURI().toString()));
     }
 }

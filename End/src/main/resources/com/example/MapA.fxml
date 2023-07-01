@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="600.0" stylesheets="@../../../java/com/example/CssStyle/Map.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MapA">
+<AnchorPane prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MapA">
    <children>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="250.0" layoutY="200.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="200.0">
          <image>
@@ -42,6 +45,57 @@
             <Image url="@Building3.jpg" />
          </image>
       </ImageView>
+      <AnchorPane layoutX="447.0" layoutY="3.0" prefHeight="500.0" prefWidth="50.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="50.0" layoutX="5.0" layoutY="8.0" onMouseClicked="#nighter" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
+               <image>
+                  <Image url="@1_knight_.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="50.0" layoutX="5.0" layoutY="118.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="120.0">
+               <image>
+                  <Image url="@1_Woman%20warrior.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="50.0" layoutX="5.0" layoutY="229.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="229.0">
+               <image>
+                  <Image url="@2_Woman%20warrior.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="50.0" layoutX="5.0" layoutY="356.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="340.0">
+               <image>
+                  <Image url="@Asset%20148.png" />
+               </image>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="443.0">
+               <image>
+                  <Image url="@Red.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <InnerShadow height="83.05" radius="33.715" width="53.81">
+               <color>
+                  <Color red="0.5802469253540039" green="1.0" blue="0.25925925374031067" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </AnchorPane>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="250.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="250.0">
          <image>
             <Image url="@Building4.jpg" />

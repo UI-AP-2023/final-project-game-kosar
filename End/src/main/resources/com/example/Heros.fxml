@@ -5,25 +5,74 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="200.0" prefWidth="400.0" styleClass="root" stylesheets="@../../../java/com/example/CssStyle/Hero.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.Heros">
+<AnchorPane prefHeight="500.0" prefWidth="600.0" styleClass="root" stylesheets="@../../../java/com/example/CssStyle/Hero.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.Heros">
    <children>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="11.0" onMouseClicked="#buildings" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="190.0" fitWidth="150.0" layoutX="1.0" layoutY="69.0" AnchorPane.bottomAnchor="242.0928985595703" AnchorPane.leftAnchor="1.0">
          <image>
-            <Image url="@buildings.png" />
+            <Image url="@Asset%20148.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="200.0" onMouseClicked="#heros" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="190.0" fitWidth="150.0" layoutX="450.0" layoutY="69.0" nodeOrientation="RIGHT_TO_LEFT">
          <image>
-            <Image url="@Heros.png" />
+            <Image url="@2_Woman%20warrior.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="190.0" fitWidth="150.0" layoutX="450.0" layoutY="291.0" nodeOrientation="RIGHT_TO_LEFT" AnchorPane.bottomAnchor="19.0" AnchorPane.rightAnchor="1.1000000000000227">
+         <image>
+            <Image url="@1_Woman%20warrior.png" />
+         </image>
+      </ImageView>
+      <Rectangle fill="WHITE" height="50.0" layoutY="7.0" stroke="#006fff" strokeType="INSIDE" width="270.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <effect>
+            <InnerShadow height="63.17" radius="32.2525" width="67.84">
+               <color>
+                  <Color red="0.8100000023841858" green="0.17820000648498535" blue="0.17820000648498535" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="53.0" fitWidth="63.0" layoutX="269.0" onMouseClicked="#back" AnchorPane.rightAnchor="268.4" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@Red.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="84.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heros">
+         <font>
+            <Font name="Monospaced Bold" size="34.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Text>
+      <Rectangle fill="WHITE" height="50.0" layoutX="330.0" layoutY="2.0" onMouseClicked="#builings" stroke="#006fff" strokeType="INSIDE" width="270.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <effect>
+            <InnerShadow height="63.17" radius="32.2525" width="67.84">
+               <color>
+                  <Color red="0.8100000023841858" green="0.17820000648498535" blue="0.17820000648498535" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Rectangle>
+      <Text fill="WHITE" layoutX="388.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buildigs">
+         <font>
+            <Font name="Monospaced Bold" size="32.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Text>
+      <Line endX="302.39996337890625" layoutX="298.0" layoutY="276.0" startX="-306.0" />
+      <ImageView fitHeight="200.0" fitWidth="145.0" layoutX="3.0" layoutY="287.0">
+         <image>
+            <Image url="@1_knight_.png" />
+         </image>
+      </ImageView>
+      <Line endX="3.54998779296875" endY="307.0000305175781" layoutX="297.0" layoutY="193.0" startX="-0.307098388671875" startY="-142.39999389648438" />
+      <Line endX="20.70001220703125" endY="-7.62939453125E-6" layoutX="310.0" layoutY="50.0" startX="-40.0" startY="-7.62939453125E-6" />
    </children>
-   <effect>
-      <InnerShadow height="109.9" radius="54.45" width="109.9">
-         <color>
-            <Color red="0.5263158082962036" green="0.07894736528396606" />
-         </color>
-      </InnerShadow>
-   </effect>
 </AnchorPane>

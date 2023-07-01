@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="327.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ChoseHero">
+   <children>
+      <Text fill="WHITE" layoutX="35.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Number of Heros">
+         <font>
+            <Font name="Monospaced Bold" size="22.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Text>
+      <Text fx:id="number" fill="WHITE" layoutX="134.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="44.44508361816406">
+         <font>
+            <Font name="Monospaced Bold" size="22.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Text>
+      <ImageView fitHeight="140.0" fitWidth="110.0" layoutX="459.0" layoutY="128.0" AnchorPane.bottomAnchor="59.0">
+         <image>
+            <Image url="@1_Woman%20warrior.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="140.0" fitWidth="110.0" layoutX="156.0" layoutY="128.0" AnchorPane.bottomAnchor="59.0">
+         <image>
+            <Image url="@2_Woman%20warrior.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="110.0" layoutX="304.0" layoutY="118.0" AnchorPane.bottomAnchor="59.0">
+         <image>
+            <Image url="@1_knight_.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="140.0" fitWidth="110.0" layoutY="128.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="0.0">
+         <image>
+            <Image url="@Asset%20148.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="108.0" fitWidth="132.0" layoutX="374.0" layoutY="14.0" onMouseClicked="#fight">
+         <image>
+            <Image url="@Asset%201489.png" />
+         </image>
+      </ImageView>
+      <Spinner fx:id="archerSpinner" blendMode="SRC_ATOP" editable="true" layoutX="26.0" layoutY="274.0" prefHeight="26.0" prefWidth="71.0" AnchorPane.topAnchor="274.0">
+         <effect>
+            <Lighting diffuseConstant="2.0" specularConstant="0.7" specularExponent="6.61" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.9157894849777222" green="0.7092280983924866" blue="0.3256140351295471" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Spinner>
+      <Spinner fx:id="WarriorSpinner" blendMode="SRC_ATOP" editable="true" layoutX="470.0" layoutY="274.0" prefHeight="26.0" prefWidth="71.0">
+         <effect>
+            <Lighting diffuseConstant="2.0" specularConstant="0.7" specularExponent="6.61" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.9157894849777222" green="0.7092280983924866" blue="0.3256140351295471" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Spinner>
+      <Spinner fx:id="nightSpinner" blendMode="SRC_ATOP" editable="true" layoutX="323.0" layoutY="274.0" prefHeight="26.0" prefWidth="71.0">
+         <effect>
+            <Lighting diffuseConstant="2.0" specularConstant="0.7" specularExponent="6.61" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.9157894849777222" green="0.7092280983924866" blue="0.3256140351295471" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Spinner>
+      <Spinner fx:id="redPishiSpinner" blendMode="SRC_ATOP" editable="true" layoutX="175.0" layoutY="274.0" prefHeight="26.0" prefWidth="71.0">
+         <effect>
+            <Lighting diffuseConstant="2.0" specularConstant="0.7" specularExponent="6.61" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.9157894849777222" green="0.7092280983924866" blue="0.3256140351295471" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Spinner>
+   </children>
+</AnchorPane>

@@ -15,11 +15,6 @@
             <Image url="@rha1s4v4ldbj3us8m28ohm4pj3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="455.0" layoutY="10.0" onMouseClicked="#attack">
-         <image>
-            <Image url="@sword-weapon-download-icon-swords-dc61dca3c89bc340096370658ec3fe58.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="10.0" layoutY="220.0" onMouseClicked="#map">
          <image>
             <Image url="@cartoon-map-euclidean-vector-tourist-map-vector-map-c16214e5e24af21b9959b40294a58a68.png" />
@@ -38,6 +33,11 @@
       <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="248.0" layoutY="263.0" onMouseClicked="#logOut">
          <image>
             <Image url="@Red.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="120.0" fitWidth="133.0" layoutX="432.0" onMouseClicked="#attack" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@Asset%201489.png" />
          </image>
       </ImageView>
    </children>
