@@ -7,10 +7,20 @@ public class ThisPlayer {
     static private Player player;
     static private int indexEnemy;
     static private Map map;
-    static private int archerNumber =0 ;
-    static private int warriorNumber = 0 ;
-    static private int redPishiNumber = 0 ;
-    static  private  int nighterNumber = 0;
+    static private int archerNumber = 0;
+    static private int warriorNumber = 0;
+    static private int redPishiNumber = 0;
+    static private int nighterNumber = 0;
+
+    static private int lenght = 10 ;
+
+    public static int getLenght() {
+        return lenght;
+    }
+
+    public static void setLenght(int lenght) {
+        ThisPlayer.lenght = lenght;
+    }
 
     public static int getArcherNumber() {
         return archerNumber;

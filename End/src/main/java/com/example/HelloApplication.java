@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.time.Duration;
 
 public class HelloApplication extends Application {
-    static public Pane root = new Pane();
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SighLog.fxml"));

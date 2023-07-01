@@ -27,7 +27,6 @@ import java.util.ResourceBundle;
 import static java.lang.Integer.parseInt;
 
 public class ChoseHero implements Initializable {
-    static public Pane root = new Pane();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         number.setText("" + Players.getPlayers().get(ThisPlayer.getIndexEnemy()).getMap().getNumberOfHero());
@@ -77,10 +76,14 @@ public class ChoseHero implements Initializable {
 
         if ((archerNum + warriorNum + nighterNum + redPishiNum) ==
                 Players.getPlayers().get(ThisPlayer.getIndexEnemy()).getMap().getNumberOfHero()) {
+            ThisPlayer.setArcherNumber(archerNum);
+            ThisPlayer.setNighterNumber(nighterNum);
+            ThisPlayer.setRedPishiNumber(redPishiNum);
+            ThisPlayer.setWarriorNumber(warriorNum);
             if (ThisPlayer.getMap() instanceof MapA) {
-                root = FXMLLoader.load(getClass().getResource("MapA.fxml"));
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MapA.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
                 stage.setScene(scene);
                 stage.show();
             }
