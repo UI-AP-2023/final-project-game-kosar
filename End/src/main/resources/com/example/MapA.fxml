@@ -7,9 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 
-<AnchorPane fx:id="mapA" prefHeight="500.0" prefWidth="650.0" stylesheets="@../../../java/com/example/CssStyle/Map.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MapA">
+<AnchorPane fx:id="mapA" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MapA">
    <children>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="250.0" layoutY="200.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="200.0">
+      <ImageView fitHeight="500.0" fitWidth="600.0" layoutX="283.0" layoutY="103.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@b4ed153e2db605e9129f5eb2c03aaf39.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="main" fitHeight="100.0" fitWidth="100.0" layoutX="250.0" layoutY="200.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="200.0">
          <image>
             <Image url="@Building2.jpg" />
          </image>

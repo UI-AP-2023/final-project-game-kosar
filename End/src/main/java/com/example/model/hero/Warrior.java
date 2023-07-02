@@ -1,13 +1,13 @@
 package com.example.model.hero;
 
 import com.example.model.building.Location;
+import com.example.model.building.Middle;
 import javafx.scene.image.ImageView;
 
 import java.io.File;
 
-public class Warrior extends Hero{
-    public Warrior(Location location) {
-        super(location);
+public class Warrior extends Hero {
+    public Warrior() {
         setName("Warrior");
         setHealth(15);
         setPower(3);

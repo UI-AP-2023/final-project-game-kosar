@@ -1,13 +1,13 @@
 package com.example.model.hero;
 
 import com.example.model.building.Location;
+import com.example.model.building.Middle;
 import javafx.scene.image.ImageView;
 
 import java.io.File;
 
 public class RedPishi extends Hero{
-    public RedPishi(Location location) {
-        super(location);
+    public RedPishi() {
         setName("Red Pishi");
         setHealth(12);
         setPower(2);
@@ -17,4 +17,5 @@ public class RedPishi extends Hero{
                 "P:\\Kosar\\final-project-pishi-nini\\demo\\src\\main\\resources\\com\\example\\demo\\RedPishi.png")
                 .toURI().toString()));
     }
+
 }

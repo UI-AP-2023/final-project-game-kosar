@@ -26,7 +26,7 @@ public class Attack implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         number.setText("" + Players.getPlayers().get(ThisPlayer.getIndexEnemy()).getMap().getNumberOfHero());
         if (ThisPlayer.getPlayer().getMap().getName().equals("A")) {
-        ///   map.setImage(new Image("MapA.png"));
+           map.setImage(new Image("MapA.png"));
         } else if (ThisPlayer.getPlayer().getMap().getName().equals("B")) {
         } else if (ThisPlayer.getPlayer().getMap().getName().equals("C")) {
         } else if (ThisPlayer.getPlayer().getMap().getName().equals("D")) {

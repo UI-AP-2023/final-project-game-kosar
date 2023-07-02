@@ -1,6 +1,7 @@
 package com.example.model.hero;
 
 import com.example.model.building.Location;
+import com.example.model.building.Middle;
 import javafx.scene.image.ImageView;
 
 abstract public class Hero {
@@ -9,11 +10,23 @@ abstract public class Hero {
     private int health;
     private int power ;
     private long timeBetween ;
-    private int speed ;
-    private Location location;
+    private double speed ;
+    private Middle middle;
     private ImageView imageView;
-    public Hero( Location location ){
-        this.location = location;
+    public Hero(){
+
+    }
+
+    public Middle getMiddle() {
+        return middle;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void setMiddle(Middle middle) {
+        this.middle = middle;
     }
 
     public void setImageView(ImageView imageView) {
@@ -32,14 +45,9 @@ abstract public class Hero {
         this.power = power;
     }
 
-    public void setSpeed(int speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
     public void setTimeBetween(long timeBetween) {
         this.timeBetween = timeBetween;
     }

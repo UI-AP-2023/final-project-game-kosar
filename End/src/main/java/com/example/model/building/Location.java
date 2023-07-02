@@ -12,4 +12,20 @@ public class Location {
         this.lastX = lastX;
         this.lastY = lastY;
     }
+
+    public int getFirstX() {
+        return firstX;
+    }
+
+    public int getFirstY() {
+        return firstY;
+    }
+
+    public int getLastX() {
+        return lastX;
+    }
+
+    public int getLastY() {
+        return lastY;
+    }
 }

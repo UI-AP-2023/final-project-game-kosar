@@ -1,15 +1,14 @@
 package com.example.model.hero;
 
 import com.example.model.building.Location;
+import com.example.model.building.Middle;
 import javafx.scene.image.ImageView;
 
 import java.io.File;
 
 public class Archer extends Hero implements Shot {
     private int redius;
-
-    public Archer(Location location) {
-        super(location);
+    public Archer() {
         setName("Archer");
         setHealth(10);
         setPower(3);
@@ -20,4 +19,5 @@ public class Archer extends Hero implements Shot {
                 "P:\\Kosar\\final-project-pishi-nini\\demo\\src\\main\\resources\\com\\example\\demo\\Archer.ppg")
                 .toURI().toString()));
     }
+
 }

@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class HelloApplication extends Application {
     @Override
@@ -19,7 +20,6 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
-
 
         Player player = new Player("1","1");
         player.setMap(new MapA());

@@ -6,9 +6,17 @@ abstract public class Building {
     private Boolean defensive;
     private int health;
     private ImageView imageView;
-    private Location location ;
+    private Location location;
+    private Middle middle;
+
     public Building(Location location) {
         this.location = location;
+        middle = new Middle(((location.getFirstX() + location.getLastX()) / 2), ((location.getLastY() + location.getFirstY()) / 2));
+
+    }
+
+    public Middle getMiddle() {
+        return middle;
     }
 
     public void setDefensive(Boolean defensive) {
@@ -25,5 +33,17 @@ abstract public class Building {
 
     public void setImageView(ImageView imageView) {
         this.imageView = imageView;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public Boolean getDefensive() {
+        return defensive;
     }
 }

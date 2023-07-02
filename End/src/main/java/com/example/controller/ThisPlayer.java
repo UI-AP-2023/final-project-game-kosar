@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.model.map.Map;
 import com.example.model.player.Player;
+import javafx.scene.image.ImageView;
 
 public class ThisPlayer {
     static private Player player;
@@ -11,8 +12,16 @@ public class ThisPlayer {
     static private int warriorNumber = 0;
     static private int redPishiNumber = 0;
     static private int nighterNumber = 0;
-
     static private int lenght = 10 ;
+    static private ImageView imageView ;
+
+    public static ImageView getImageView() {
+        return imageView;
+    }
+
+    public static void setImageView(ImageView imageView) {
+        ThisPlayer.imageView = imageView;
+    }
 
     public static int getLenght() {
         return lenght;
