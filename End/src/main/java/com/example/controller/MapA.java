@@ -3,24 +3,28 @@ package com.example.controller;
 import com.example.HelloApplication;
 import com.example.model.building.*;
 import com.example.model.hero.Nighter;
+import com.example.model.player.Player;
+import com.example.model.player.Players;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class MapA implements Initializable {
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -28,53 +32,136 @@ public class MapA implements Initializable {
 
     @FXML
     private AnchorPane mapA;
+    private boolean nighter = false;
+    private boolean warrior = false;
+    private boolean redPishi = false;
+    private boolean atcher = false;
 
-    ImageView copy(ImageView imageView) {
-        ImageView imageView1 = new ImageView(imageView.getImage());
-        return imageView1;
+
+    @FXML
+    void press(MouseEvent event) {
+        double x = event.getX();
+        double y = event.getY();
+        ThisPlayer.setY(y);
+        ThisPlayer.setX(x);
+        System.out.println(x);
+        System.out.println(y);
+        if (nighter) {
+            Image image = new Image("1_knight_.png");
+            ImageView imageView = new ImageView(image);
+
+            imageView.setFitHeight(40);
+            imageView.setFitWidth(30);
+
+            imageView.setX(x - 15);
+            imageView.setY(y - 20);
+            mapA.getChildren().add(imageView);
+            nighter = false;
+            ThisPlayer.setNighterNumber(ThisPlayer.getNighterNumber() - 1);
+            ThisPlayer.setImageView(imageView);
+
+            Nighter nighter1 = new Nighter();
+            Thread thread = new Thread(nighter1);
+            thread.start();
+
+        }
+        if (warrior) {
+            Image image = new Image("1_Woman warrior.png");
+            ImageView imageView = new ImageView(image);
+
+            imageView.setFitHeight(40);
+            imageView.setFitWidth(30);
+
+            imageView.setX(x - 15);
+            imageView.setY(y - 20);
+            mapA.getChildren().add(imageView);
+            warrior = false;
+            ///////////////////////////////////////////////////////////////////////////////////
+            ThisPlayer.setWarriorNumber(ThisPlayer.getWarriorNumber() - 1);
+        }
+        if (atcher) {
+            Image image = new Image("Asset 148.png");
+            ImageView imageView = new ImageView(image);
+
+            imageView.setFitHeight(40);
+            imageView.setFitWidth(30);
+
+            imageView.setX(x - 15);
+            imageView.setY(y - 20);
+            mapA.getChildren().add(imageView);
+            atcher = false;
+            ///////////////////////////////////////////////////////////////////////////////////
+            ThisPlayer.setArcherNumber(ThisPlayer.getArcherNumber() - 1);
+        }
+        if (redPishi) {
+            Image image = new Image("2_Woman warrior.png");
+            ImageView imageView = new ImageView(image);
+
+            imageView.setFitHeight(40);
+            imageView.setFitWidth(30);
+
+            imageView.setX(x - 15);
+            imageView.setY(y - 20);
+            mapA.getChildren().add(imageView);
+            redPishi = false;
+            ///////////////////////////////////////////////////////////////////////////////////
+            ThisPlayer.setRedPishiNumber(ThisPlayer.getRedPishiNumber() - 1);
+        }
     }
 
     @FXML
     void nighter(MouseEvent event) {
-        System.out.println("q");
         if (ThisPlayer.getNighterNumber() > 0) {
-            AtomicReference<ImageView> test = new AtomicReference<>();
-            Image image = new Image("1_knight_.png");
-            ImageView imageView = new ImageView(image);
-            Nighter nighter = new Nighter();
-            Node hero = imageView;
-
-            hero.setOnMousePressed(e -> {
-                test.set(copy((ImageView) hero));
-                hero.setCursor(Cursor.CLOSED_HAND);
-            });
-
-            hero.setOnMouseDragged(e -> {
-                test.get().setTranslateX(e.getSceneX());
-                test.get().setTranslateY(e.getSceneY());
-            });
-
-            hero.setOnMouseReleased(e -> {
-                mapA.getChildren().add(hero);
-            });
-
-            ThisPlayer.setNighterNumber(ThisPlayer.getNighterNumber() - 1);
-            System.out.println("ss");
+            warrior = false;
+            redPishi = false;
+            atcher = false;
+            nighter = true;
         }
     }
 
     @FXML
     void archer(MouseEvent event) {
-
+        if (ThisPlayer.getArcherNumber() > 0) {
+            redPishi = false;
+            nighter = false;
+            warrior = false;
+            atcher = true;
+        }
     }
 
     @FXML
     void redpishi(MouseEvent event) {
-
+        if (ThisPlayer.getRedPishiNumber() > 0) {
+            warrior = false;
+            nighter = false;
+            atcher = false;
+            redPishi = true;
+        }
     }
 
     @FXML
     void warrior(MouseEvent event) {
+        if (ThisPlayer.getWarriorNumber() > 0) {
+            nighter = false;
+            redPishi = false;
+            atcher = false;
+            warrior = true;
+        }
+    }
 
+    @FXML
+    void back(MouseEvent event) throws IOException {
+        for (Player player : Players.getPlayers()) {
+            if (player.equals(ThisPlayer.getPlayer())) {
+                player.setLost(player.getLost() + 1);
+                ThisPlayer.setPlayer(player);
+                break;
+            }
+        }
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Panel.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 }

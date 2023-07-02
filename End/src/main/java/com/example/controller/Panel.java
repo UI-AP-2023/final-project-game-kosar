@@ -62,20 +62,10 @@ public class Panel implements Initializable {
 
     @FXML
     void map(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = null;
-        if (ThisPlayer.getPlayer().getMap().getName().equals("A")) {
-            fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MapA.fxml"));
-        } else if (ThisPlayer.getPlayer().getMap().getName().equals("B")) {
-            fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MapB.fxml"));
-        } else if (ThisPlayer.getPlayer().getMap().getName().equals("C")) {
-            fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MapC.fxml"));
-        } else if (ThisPlayer.getPlayer().getMap().getName().equals("D")) {
-            fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MapD.fxml"));
-        }
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ShowMap.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
+        Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-
     }
 }

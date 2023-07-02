@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.controller.ShowMap"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ShowMap">
+   <children>
+      <ImageView fx:id="map" fitHeight="350.0" fitWidth="400.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-14.0" AnchorPane.topAnchor="0.0" />
+      <ImageView fitHeight="52.0" fitWidth="44.0" layoutX="356.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="306.0" AnchorPane.leftAnchor="356.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <effect>
+            <InnerShadow height="74.81" radius="36.480000000000004" width="73.11">
+               <color>
+                  <Color green="0.4089473783969879" blue="0.6631578803062439" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <image>
+            <Image url="@Red.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <InnerShadow height="79.49" radius="39.2425" width="79.48">
+         <color>
+            <Color green="0.6899999976158142" blue="0.4075201749801636" />
+         </color>
+      </InnerShadow>
+   </effect>
 </AnchorPane>

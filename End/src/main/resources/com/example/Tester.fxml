@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="pane" onMousePressed="#press" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.Tester">
+   <children>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="333.0" layoutY="111.0" onMouseClicked="#nighter">
+         <image>
+            <Image url="@clip-art-clash-of-clans-graphics-italy-image-clash-of-clans-c9935ab797356df7c13e2b9a5e73c1d4.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

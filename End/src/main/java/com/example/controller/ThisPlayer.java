@@ -12,7 +12,8 @@ public class ThisPlayer {
     static private int warriorNumber = 0;
     static private int redPishiNumber = 0;
     static private int nighterNumber = 0;
-    static private int lenght = 10 ;
+    static private  double X ;
+    static private  double Y;
     static private ImageView imageView ;
 
     public static ImageView getImageView() {
@@ -23,12 +24,20 @@ public class ThisPlayer {
         ThisPlayer.imageView = imageView;
     }
 
-    public static int getLenght() {
-        return lenght;
+    public static void setY(double y) {
+        Y = y;
     }
 
-    public static void setLenght(int lenght) {
-        ThisPlayer.lenght = lenght;
+    public static void setX(double x) {
+        X = x;
+    }
+
+    public static double getX() {
+        return X;
+    }
+
+    public static double getY() {
+        return Y;
     }
 
     public static int getArcherNumber() {

@@ -25,11 +25,14 @@ public class Attack implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         number.setText("" + Players.getPlayers().get(ThisPlayer.getIndexEnemy()).getMap().getNumberOfHero());
-        if (ThisPlayer.getPlayer().getMap().getName().equals("A")) {
-           map.setImage(new Image("MapA.png"));
-        } else if (ThisPlayer.getPlayer().getMap().getName().equals("B")) {
-        } else if (ThisPlayer.getPlayer().getMap().getName().equals("C")) {
-        } else if (ThisPlayer.getPlayer().getMap().getName().equals("D")) {
+        if (Players.getPlayers().get(ThisPlayer.getIndexEnemy()).getMap().getName().equals("A")) {
+            map.setImage(new Image("MapA.png"));
+        } else if (Players.getPlayers().get(ThisPlayer.getIndexEnemy()).getMap().getName().equals("B")) {
+            map.setImage(new Image("MapB.png"));
+        } else if (Players.getPlayers().get(ThisPlayer.getIndexEnemy()).getMap().getName().equals("C")) {
+            map.setImage(new Image("MapC.png"));
+        } else {
+            map.setImage(new Image("MapD.png"));
         }
     }
 

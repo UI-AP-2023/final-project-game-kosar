@@ -1,19 +1,14 @@
 package com.example.model.hero;
 
-import com.example.controller.Drag;
 import com.example.controller.ThisPlayer;
-import com.example.model.building.Middle;
 import com.example.model.building.Building;
-import com.example.model.building.Location;
+import com.example.model.building.Middle;
 import javafx.animation.TranslateTransition;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-import java.io.File;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Nighter extends Hero implements Runnable {
     public Nighter() {
@@ -21,7 +16,7 @@ public class Nighter extends Hero implements Runnable {
         setHealth(10);
         setPower(4);
         setTimeBetween(2000);
-        setSpeed(0.5);
+        setSpeed(50);
         Image image = new Image("1_knight_.png");
         ImageView imageView = new ImageView(image);
         setImageView(imageView);
@@ -30,12 +25,11 @@ public class Nighter extends Hero implements Runnable {
     @Override
     public void run() {
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        Middle middle = new Middle(Drag.getLayoutX(), Drag.getLayoutY());
+        Middle middle = new Middle(ThisPlayer.getX(), ThisPlayer.getY());
         setMiddle(middle);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         achiveToBuildings();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     }
 
     private void achiveToBuildings() {
@@ -46,14 +40,14 @@ public class Nighter extends Hero implements Runnable {
             if (ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastX() >= this.getMiddle().getX()) {
                 trans = true;
                 double lenY;
-                if (this.getMiddle().getY() >= 250) {
-                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() - this.getMiddle().getY();
+                if (this.getMiddle().getY() <= 250) {
+                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() - this.getMiddle().getY() - 20;
                 } else {
-                    lenY = this.getMiddle().getY() - ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY();
+                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() - this.getMiddle().getY() + 20;
                 }
                 TranslateTransition transition = new TranslateTransition();
                 transition.setNode(ThisPlayer.getImageView());
-                transition.setDuration(Duration.millis(lenY * getSpeed()));
+                transition.setDuration(Duration.millis(Math.abs(lenY * getSpeed())));
                 transition.setCycleCount(1);
                 transition.setByY(lenY);
                 transition.play();
@@ -64,13 +58,13 @@ public class Nighter extends Hero implements Runnable {
                 trans = true;
                 double lenX;
                 if (this.getMiddle().getX() >= 300) {
-                    lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastX() - this.getMiddle().getX();
+                    lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastX() - this.getMiddle().getX() + 15;
                 } else {
-                    lenX = this.getMiddle().getX() - ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstX();
+                    lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstX() - this.getMiddle().getX() - 15;
                 }
                 TranslateTransition transition = new TranslateTransition();
                 transition.setNode(ThisPlayer.getImageView());
-                transition.setDuration(Duration.millis(lenX * getSpeed()));
+                transition.setDuration(Duration.millis(Math.abs(lenX * getSpeed())));
                 transition.setCycleCount(1);
                 transition.setByX(lenX);
                 transition.play();
@@ -80,24 +74,24 @@ public class Nighter extends Hero implements Runnable {
             double lenX = 0;
             double lenY = 0;
             if (this.getMiddle().getX() <= 300) {
-                lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstX() - getMiddle().getX();
+                lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstX() - getMiddle().getX()-15;
                 if (this.getMiddle().getY() <= 250) {
-                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() - getMiddle().getY();
+                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() - getMiddle().getY() -20;
                 } else {
-                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() - getMiddle().getY();
+                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() - getMiddle().getY()+20;
                 }
             } else {
-                lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastX() - getMiddle().getX();
+                lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastX() - getMiddle().getX()+15;
                 if (this.getMiddle().getY() <= 250) {
-                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() - getMiddle().getY();
+                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() - getMiddle().getY()-20;
                 } else {
-                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() - getMiddle().getY();
+                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() - getMiddle().getY()+20;
                 }
             }
             double lenPlus = Math.sqrt(lenX * lenX + lenY * lenY);
             TranslateTransition transition = new TranslateTransition();
             transition.setNode(ThisPlayer.getImageView());
-            transition.setDuration(Duration.millis(lenPlus * getSpeed()));
+            transition.setDuration(Duration.millis(Math.abs(lenPlus * getSpeed())));
             transition.setCycleCount(1);
             transition.setByX(lenX);
             transition.setByY(lenY);

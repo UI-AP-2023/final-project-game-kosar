@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="mapA" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MapA">
    <children>
-      <ImageView fitHeight="500.0" fitWidth="600.0" layoutX="283.0" layoutY="103.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="500.0" fitWidth="600.0" layoutX="283.0" layoutY="103.0" onMousePressed="#press" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@b4ed153e2db605e9129f5eb2c03aaf39.jpg" />
          </image>
@@ -49,7 +49,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="443.0">
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="443.0" onMouseClicked="#back">
                <image>
                   <Image url="@Red.png" />
                </image>
