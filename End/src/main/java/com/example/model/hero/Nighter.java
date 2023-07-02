@@ -16,7 +16,7 @@ public class Nighter extends Hero implements Runnable {
         setHealth(10);
         setPower(4);
         setTimeBetween(2000);
-        setSpeed(50);
+        setSpeed(30);
         Image image = new Image("1_knight_.png");
         ImageView imageView = new ImageView(image);
         setImageView(imageView);
@@ -24,15 +24,12 @@ public class Nighter extends Hero implements Runnable {
 
     @Override
     public void run() {
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         Middle middle = new Middle(ThisPlayer.getX(), ThisPlayer.getY());
         setMiddle(middle);
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        achiveToBuildings();
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        achieveToBuildings();
     }
 
-    private void achiveToBuildings() {
+    private void achieveToBuildings() {
         int index = nearBuilding();
         boolean trans = false;
 

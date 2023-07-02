@@ -2,7 +2,10 @@ package com.example.controller;
 
 import com.example.HelloApplication;
 import com.example.model.building.*;
+import com.example.model.hero.Archer;
 import com.example.model.hero.Nighter;
+import com.example.model.hero.RedPishi;
+import com.example.model.hero.Warrior;
 import com.example.model.player.Player;
 import com.example.model.player.Players;
 import javafx.fxml.FXML;
@@ -57,13 +60,13 @@ public class MapA implements Initializable {
             imageView.setY(y - 20);
             mapA.getChildren().add(imageView);
             nighter = false;
+
             ThisPlayer.setNighterNumber(ThisPlayer.getNighterNumber() - 1);
             ThisPlayer.setImageView(imageView);
 
             Nighter nighter1 = new Nighter();
             Thread thread = new Thread(nighter1);
             thread.start();
-
         }
         if (warrior) {
             Image image = new Image("1_Woman warrior.png");
@@ -76,8 +79,13 @@ public class MapA implements Initializable {
             imageView.setY(y - 20);
             mapA.getChildren().add(imageView);
             warrior = false;
-            ///////////////////////////////////////////////////////////////////////////////////
+
             ThisPlayer.setWarriorNumber(ThisPlayer.getWarriorNumber() - 1);
+            ThisPlayer.setImageView(imageView);
+
+            Warrior warrior1 = new Warrior();
+            Thread thread = new Thread(warrior1);
+            thread.start();
         }
         if (atcher) {
             Image image = new Image("Asset 148.png");
@@ -90,8 +98,13 @@ public class MapA implements Initializable {
             imageView.setY(y - 20);
             mapA.getChildren().add(imageView);
             atcher = false;
-            ///////////////////////////////////////////////////////////////////////////////////
+
             ThisPlayer.setArcherNumber(ThisPlayer.getArcherNumber() - 1);
+            ThisPlayer.setImageView(imageView);
+
+            Archer archer =new Archer();
+            Thread thread = new Thread(archer);
+            thread.start();
         }
         if (redPishi) {
             Image image = new Image("2_Woman warrior.png");
@@ -104,8 +117,13 @@ public class MapA implements Initializable {
             imageView.setY(y - 20);
             mapA.getChildren().add(imageView);
             redPishi = false;
-            ///////////////////////////////////////////////////////////////////////////////////
+
             ThisPlayer.setRedPishiNumber(ThisPlayer.getRedPishiNumber() - 1);
+            ThisPlayer.setImageView(imageView);
+
+            RedPishi redPishi1 = new RedPishi();
+            Thread thread = new Thread(redPishi1);
+            thread.start();
         }
     }
 

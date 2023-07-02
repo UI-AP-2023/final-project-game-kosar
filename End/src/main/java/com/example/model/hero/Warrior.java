@@ -2,14 +2,12 @@ package com.example.model.hero;
 
 import com.example.controller.ThisPlayer;
 import com.example.model.building.Building;
-import com.example.model.building.Location;
 import com.example.model.building.Middle;
 import javafx.animation.TranslateTransition;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class Warrior extends Hero implements Runnable {
@@ -18,7 +16,7 @@ public class Warrior extends Hero implements Runnable {
         setHealth(15);
         setPower(3);
         setTimeBetween(2000);
-        setSpeed(55);
+        setSpeed(20);
         Image image = new Image("1_Woman warrior.png");
         ImageView imageView = new ImageView(image);
         setImageView(imageView);
@@ -30,12 +28,12 @@ public class Warrior extends Hero implements Runnable {
         Middle middle = new Middle(ThisPlayer.getX(), ThisPlayer.getY());
         setMiddle(middle);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        achiveToBuildings();
+        archiveToBuildings();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
 
-    private void achiveToBuildings() {
+    private void archiveToBuildings() {
         int index = nearBuilding();
         boolean trans = false;
 
