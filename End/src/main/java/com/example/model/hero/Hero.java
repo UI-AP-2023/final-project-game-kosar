@@ -17,6 +17,18 @@ abstract public class Hero {
 
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public long getTimeBetween() {
+        return timeBetween;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
     public Middle getMiddle() {
         return middle;
     }

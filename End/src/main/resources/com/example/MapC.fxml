@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 
-<AnchorPane prefHeight="500.0" prefWidth="650.0" stylesheets="@../../../java/com/example/CssStyle/Map1.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MapC">
+<AnchorPane fx:id="mapC" onMousePressed="#press" prefHeight="500.0" prefWidth="650.0" stylesheets="@../../../java/com/example/CssStyle/Map1.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MapC">
    <children>
+      <ImageView fitHeight="500.0" fitWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="250.0" layoutY="200.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="200.0">
          <image>
             <Image url="@Building2.jpg" />
@@ -50,41 +54,29 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <children>
-            <ImageView fitHeight="70.0" fitWidth="50.0" layoutX="5.0" layoutY="8.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
-               <image>
-                  <Image url="@1_knight_.png" />
-               </image>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </ImageView>
-            <ImageView fitHeight="70.0" fitWidth="50.0" layoutX="5.0" layoutY="118.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="120.0">
-               <image>
-                  <Image url="@1_Woman%20warrior.png" />
-               </image>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </ImageView>
-            <ImageView fitHeight="70.0" fitWidth="50.0" layoutX="5.0" layoutY="229.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="229.0">
-               <image>
-                  <Image url="@2_Woman%20warrior.png" />
-               </image>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </ImageView>
-            <ImageView fitHeight="70.0" fitWidth="50.0" layoutX="5.0" layoutY="356.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="340.0">
-               <image>
-                  <Image url="@Asset%20148.png" />
-               </image>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="443.0">
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="438.0" onMouseClicked="#back">
                <image>
                   <Image url="@Red.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="-5.0" layoutY="30.0" onMouseClicked="#nighter">
+               <image>
+                  <Image url="@../../night.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutY="136.0" onMouseClicked="#warrior">
+               <image>
+                  <Image url="@../../warrior.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutY="233.0" onMouseClicked="#redPishi">
+               <image>
+                  <Image url="@../../redPishi.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutY="335.0" onMouseClicked="#archer">
+               <image>
+                  <Image url="@../../archer.png" />
                </image>
             </ImageView>
          </children>
