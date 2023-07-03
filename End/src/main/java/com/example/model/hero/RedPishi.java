@@ -30,7 +30,11 @@ public class RedPishi extends Hero implements Runnable {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         archiveToBuildings();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        try {
+            attack();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void archiveToBuildings() {
@@ -125,5 +129,31 @@ public class RedPishi extends Hero implements Runnable {
         }
         return 0;
     }
+    private void attack() throws InterruptedException {
+        int index = nearBuilding();
 
+        while (!ThisPlayer.getBuildings().get(index)) {
+            if (getHealth() > 0) {
+                ThisPlayer.getMap().getBuildings().get(index).setHealth(ThisPlayer.getMap().getBuildings().get(index).getHealth() - getPower());
+                Thread.sleep(this.getTimeBetween());
+                System.out.println("2");
+                if (ThisPlayer.getMap().getBuildings().get(index).getHealth() <= 0) {
+                    System.out.println("done");
+                    ThisPlayer.getBuildings().add(index, true);
+                    RedPishi redPishi = new RedPishi();
+                    redPishi.setHealth(this.getHealth());
+                    Thread thread = new Thread(redPishi);
+                    thread.start();
+                }
+            }else {
+                TranslateTransition transition = new TranslateTransition();
+                transition.setNode(ThisPlayer.getImageView());
+                transition.setDuration(Duration.millis(2000));
+                transition.setCycleCount(1);
+                transition.setByX(-ThisPlayer.getX());
+                transition.setByY(500-ThisPlayer.getY());
+                transition.play();
+            }
+        }
+    }
 }

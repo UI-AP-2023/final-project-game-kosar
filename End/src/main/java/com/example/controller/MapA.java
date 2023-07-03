@@ -31,11 +31,45 @@ import java.util.concurrent.atomic.AtomicReference;
 public class MapA implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        ThisPlayer.setMapA(this);
+        ThisPlayer.getImageViews().add(b0);
+        ThisPlayer.getImageViews().add(b1);
+        ThisPlayer.getImageViews().add(b2);
+        ThisPlayer.getImageViews().add(b3);
+        ThisPlayer.getImageViews().add(b4);
+        ThisPlayer.getImageViews().add(b5);
+        ThisPlayer.getImageViews().add(b6);
+        ThisPlayer.getImageViews().add(b7);
+        ThisPlayer.getImageViews().add(b8);
     }
+    @FXML
+    private ImageView b0;
 
     @FXML
-    private  AnchorPane mapA;
+    private ImageView b1;
+
+    @FXML
+    private ImageView b2;
+
+    @FXML
+    private ImageView b3;
+
+    @FXML
+    private ImageView b4;
+
+    @FXML
+    private ImageView b5;
+
+    @FXML
+    private ImageView b6;
+
+    @FXML
+    private ImageView b7;
+
+    @FXML
+    private ImageView b8;
+    @FXML
+    private AnchorPane mapA;
     private boolean nighter = false;
     private boolean warrior = false;
     private boolean redPishi = false;
@@ -104,7 +138,7 @@ public class MapA implements Initializable {
             ThisPlayer.setArcherNumber(ThisPlayer.getArcherNumber() - 1);
             ThisPlayer.setImageView(imageView);
 
-            Archer archer =new Archer();
+            Archer archer = new Archer();
             Thread thread = new Thread(archer);
             thread.start();
         }

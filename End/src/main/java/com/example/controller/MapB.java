@@ -143,7 +143,7 @@ public class MapB  implements Initializable {
     }
 
     @FXML
-    void redpishi(MouseEvent event) {
+    void redPishi(MouseEvent event) {
         if (ThisPlayer.getRedPishiNumber() > 0) {
             warrior = false;
             nighter = false;

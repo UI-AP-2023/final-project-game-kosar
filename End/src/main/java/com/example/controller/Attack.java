@@ -77,7 +77,9 @@ public class Attack implements Initializable {
     @FXML
     void next(MouseEvent event) throws IOException {
         if (ThisPlayer.getIndexEnemy() != Players.getPlayers().size() - 1) {
+            System.out.println(ThisPlayer.getIndexEnemy());
             ThisPlayer.setIndexEnemy(ThisPlayer.getIndexEnemy() + 1);
+            System.out.println(ThisPlayer.getIndexEnemy());
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Attack.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();

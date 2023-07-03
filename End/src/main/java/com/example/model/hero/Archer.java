@@ -6,6 +6,7 @@ import com.example.model.building.Building;
 import com.example.model.building.Location;
 import com.example.model.building.Middle;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
@@ -35,10 +36,15 @@ public class Archer extends Hero implements Shot, Runnable {
         setMiddle(middle);
         achieveToBuildings();
         try {
-            attack();
+            waiter();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+      //  attack();
+    }
+
+    private void waiter() throws InterruptedException {
+        Thread.sleep(10000);
     }
 
     private void achieveToBuildings() {
@@ -102,7 +108,7 @@ public class Archer extends Hero implements Shot, Runnable {
         }
 
         ThisPlayer.setX(ThisPlayer.getX() + lenX);
-        ThisPlayer.setY(ThisPlayer.getY() +lenY);
+        ThisPlayer.setY(ThisPlayer.getY() + lenY);
     }
 
     private int nearBuilding() {
@@ -130,39 +136,52 @@ public class Archer extends Hero implements Shot, Runnable {
         return 0;
     }
 
-    private void attack() throws InterruptedException {
+    private void attack() {
+        Platform.runLater(() -> {
+            Image image = new Image("a¬row.png");
+            ImageView imageView = new ImageView(image);
+            System.out.println("2");
 
-        Image image = new Image("a¬row.png");
-        ImageView imageView = new ImageView(image);
+            int index = nearBuilding();
+            double lenY = ThisPlayer.getMap().getBuildings().get(index).getMiddle().getY() - ThisPlayer.getY();
+            double lenX = ThisPlayer.getMap().getBuildings().get(index).getMiddle().getX() - ThisPlayer.getX();
+            System.out.println("2");
 
-        int index = nearBuilding();
-        double lenY = ThisPlayer.getMap().getBuildings().get(index).getMiddle().getY() - ThisPlayer.getY();
-        double lenX = ThisPlayer.getMap().getBuildings().get(index).getMiddle().getX() - ThisPlayer.getX();
+            while (!ThisPlayer.getBuildings().get(index)) {
+                imageView.setFitHeight(100);
+                imageView.setFitWidth(30);
+                System.out.println("23");
 
-        while (ThisPlayer.getBuildings().get(index)) {
-            imageView.setFitHeight(100);
-            imageView.setFitWidth(30);
+                imageView.setX(ThisPlayer.getX());
+                imageView.setY(ThisPlayer.getY());
+                System.out.println("24");
 
-            imageView.setX(ThisPlayer.getX());
-            imageView.setY(ThisPlayer.getY());
+                ThisPlayer.getMapA().getMapA().getChildren().add(imageView);
 
-            MapA mapA = new MapA();
-            mapA.getMapA().getChildren().add(imageView);
+                TranslateTransition transition = new TranslateTransition();
+                transition.setNode(imageView);
+                transition.setDuration(Duration.millis(2000));
+                transition.setCycleCount(1);
+                transition.setByY(lenY);
+                transition.setByX(lenX);
+                transition.play();
+                System.out.println("25");
 
-            TranslateTransition transition = new TranslateTransition();
-            transition.setNode(imageView);
-            transition.setDuration(Duration.millis(2000));
-            transition.setCycleCount(1);
-            transition.setByY(lenY);
-            transition.setByX(lenX);
-            transition.play();
+                ThisPlayer.getMap().getBuildings().get(index).setHealth(ThisPlayer.getMap().getBuildings().get(index).getHealth() - getPower());
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.println("26");
 
-            ThisPlayer.getMap().getBuildings().get(index).setHealth(ThisPlayer.getMap().getBuildings().get(index).getHealth() -getPower());
-            Thread.sleep(this.getTimeBetween());
-
-            if ( ThisPlayer.getMap().getBuildings().get(index).getHealth() <= 0){
-                ThisPlayer.getBuildings().add(index , true);
+                if (ThisPlayer.getMap().getBuildings().get(index).getHealth() <= 0) {
+                    ThisPlayer.getBuildings().remove(index);
+                    ThisPlayer.getBuildings().add(index, true);
+                }
+                ThisPlayer.getMapA().getMapA().getChildren().remove(imageView);
             }
-        }
+        });
     }
 }
+

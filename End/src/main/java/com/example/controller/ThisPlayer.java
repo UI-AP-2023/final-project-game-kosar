@@ -2,10 +2,9 @@ package com.example.controller;
 
 import com.example.model.building.Building;
 import com.example.model.map.Map;
+import com.example.model.map.MapA;
 import com.example.model.player.Player;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
 
@@ -21,6 +20,25 @@ public class ThisPlayer {
     static private double Y;
     static private ImageView imageView;
     static private ArrayList<Boolean> buildings = new ArrayList<>();
+    static private ArrayList<ImageView> imageViews = new ArrayList<>();
+
+    public static ArrayList<ImageView> getImageViews() {
+        return imageViews;
+    }
+
+    public static void setImageViews(ArrayList<ImageView> imageViews) {
+        ThisPlayer.imageViews = imageViews;
+    }
+
+    private static com.example.controller.MapA mapA  = new com.example.controller.MapA();
+
+    public static com.example.controller.MapA getMapA() {
+        return mapA;
+    }
+
+    public static void setMapA(com.example.controller.MapA mapA) {
+        ThisPlayer.mapA = mapA;
+    }
 
     public static ArrayList<Boolean> getBuildings() {
         return buildings;

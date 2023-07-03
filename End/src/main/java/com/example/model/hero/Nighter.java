@@ -105,16 +105,18 @@ public class Nighter extends Hero implements Runnable {
         ArrayList<Double> len = new ArrayList<>();
         ArrayList<Double> len1 = new ArrayList<>();
 
-        for (Building building : ThisPlayer.getMap().getBuildings()) {
-            double lenX = building.getMiddle().getX() - this.getMiddle().getX();
-            lenX = Math.abs(lenX);
+        for (int q = 0; q < ThisPlayer.getMap().getBuildings().size(); q++) {
+            if (!ThisPlayer.getBuildings().get(q)) {
+                double lenX = ThisPlayer.getMap().getBuildings().get(q).getMiddle().getX() - this.getMiddle().getX();
+                lenX = Math.abs(lenX);
 
-            double lenY = building.getMiddle().getY() - this.getMiddle().getY();
-            lenY = Math.abs(lenY);
+                double lenY = ThisPlayer.getMap().getBuildings().get(q).getMiddle().getY() - this.getMiddle().getY();
+                lenY = Math.abs(lenY);
 
-            double lenth = Math.sqrt((lenX * lenX) + (lenY * lenY));
-            len.add(lenth);
-            len1.add(lenth);
+                double lenth = Math.sqrt((lenX * lenX) + (lenY * lenY));
+                len.add(lenth);
+                len1.add(lenth);
+            }
         }
         len1.sort(Double::compareTo);
 
@@ -128,16 +130,39 @@ public class Nighter extends Hero implements Runnable {
 
     private void attack() throws InterruptedException {
         int index = nearBuilding();
+
         while (!ThisPlayer.getBuildings().get(index)) {
-            ThisPlayer.getMap().getBuildings().get(index).setHealth(ThisPlayer.getMap().getBuildings().get(index).getHealth() - getPower());
-            Thread.sleep(this.getTimeBetween());
-            if (ThisPlayer.getMap().getBuildings().get(index).getHealth() <= 0) {
-                ThisPlayer.getBuildings().add(index, true);
-                System.out.println("444444");
-                Nighter nighter = new Nighter();
-                nighter.setHealth(this.getHealth());
-                Thread thread = new Thread(nighter);
-                thread.start();
+            if (getHealth() > 0) {
+                ThisPlayer.getMap().getBuildings().get(index).setHealth(ThisPlayer.getMap().getBuildings().get(index).getHealth() - getPower());
+                Thread.sleep(this.getTimeBetween());
+                System.out.println("11");
+
+                if (ThisPlayer.getMap().getBuildings().get(index).getHealth() <= 0) {
+                    System.out.println("12");
+
+                    TranslateTransition transition = new TranslateTransition();
+                    transition.setNode(ThisPlayer.getImageViews().get(index));
+                    transition.setDuration(Duration.millis(2000));
+                    transition.setCycleCount(1);
+                    transition.setByX(-ThisPlayer.getX());
+                    transition.setByY(500-ThisPlayer.getY());
+                    transition.play();
+                    ThisPlayer.getBuildings().add(index, true);
+                    Nighter nighter = new Nighter();
+                    nighter.setHealth(this.getHealth());
+                    Thread thread = new Thread(nighter);
+                    thread.start();
+                    System.out.println("13");
+
+                }
+            }else {
+                TranslateTransition transition = new TranslateTransition();
+                transition.setNode(ThisPlayer.getImageView());
+                transition.setDuration(Duration.millis(2000));
+                transition.setCycleCount(1);
+                transition.setByX(-ThisPlayer.getX());
+                transition.setByY(500-ThisPlayer.getY());
+                transition.play();
             }
         }
     }
