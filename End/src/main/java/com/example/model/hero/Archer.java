@@ -1,5 +1,6 @@
 package com.example.model.hero;
 
+import com.example.controller.MapA;
 import com.example.controller.ThisPlayer;
 import com.example.model.building.Building;
 import com.example.model.building.Location;
@@ -33,16 +34,22 @@ public class Archer extends Hero implements Shot, Runnable {
         Middle middle = new Middle(ThisPlayer.getX(), ThisPlayer.getY());
         setMiddle(middle);
         achieveToBuildings();
+        try {
+            attack();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void achieveToBuildings() {
         int index = nearBuilding();
         boolean trans = false;
-
+        double lenY = 0;
+        double lenX = 0;
         if (ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstX() <= this.getMiddle().getX()) {
             if (ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastX() >= this.getMiddle().getX()) {
                 trans = true;
-                double lenY;
+
                 if (this.getMiddle().getY() <= 250) {
                     lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() - this.getMiddle().getY() - 69;
                 } else {
@@ -59,7 +66,7 @@ public class Archer extends Hero implements Shot, Runnable {
         if (ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() <= this.getMiddle().getY()) {
             if (ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() >= this.getMiddle().getY()) {
                 trans = true;
-                double lenX;
+
                 if (this.getMiddle().getX() >= 300) {
                     lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastX() - this.getMiddle().getX() + 64;
                 } else {
@@ -74,22 +81,15 @@ public class Archer extends Hero implements Shot, Runnable {
             }
         }
         if (!trans) {
-            double lenX = 0;
-            double lenY = 0;
             if (this.getMiddle().getX() <= 300) {
                 lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstX() - getMiddle().getX() - 15 - 35;
-                if (this.getMiddle().getY() <= 250) {
-                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() - getMiddle().getY() - 20 - 35;
-                } else {
-                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() - getMiddle().getY() + 20 + 35;
-                }
             } else {
                 lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastX() - getMiddle().getX() + 15 + 35;
-                if (this.getMiddle().getY() <= 250) {
-                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() - getMiddle().getY() - 20 - 35;
-                } else {
-                    lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() - getMiddle().getY() + 20 + 35;
-                }
+            }
+            if (this.getMiddle().getY() <= 250) {
+                lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() - getMiddle().getY() - 20 - 35;
+            } else {
+                lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() - getMiddle().getY() + 20 + 35;
             }
             double lenPlus = Math.sqrt(lenX * lenX + lenY * lenY);
             TranslateTransition transition = new TranslateTransition();
@@ -100,6 +100,9 @@ public class Archer extends Hero implements Shot, Runnable {
             transition.setByY(lenY);
             transition.play();
         }
+
+        ThisPlayer.setX(ThisPlayer.getX() + lenX);
+        ThisPlayer.setY(ThisPlayer.getY() +lenY);
     }
 
     private int nearBuilding() {
@@ -127,4 +130,39 @@ public class Archer extends Hero implements Shot, Runnable {
         return 0;
     }
 
+    private void attack() throws InterruptedException {
+
+        Image image = new Image("a¬row.png");
+        ImageView imageView = new ImageView(image);
+
+        int index = nearBuilding();
+        double lenY = ThisPlayer.getMap().getBuildings().get(index).getMiddle().getY() - ThisPlayer.getY();
+        double lenX = ThisPlayer.getMap().getBuildings().get(index).getMiddle().getX() - ThisPlayer.getX();
+
+        while (ThisPlayer.getBuildings().get(index)) {
+            imageView.setFitHeight(100);
+            imageView.setFitWidth(30);
+
+            imageView.setX(ThisPlayer.getX());
+            imageView.setY(ThisPlayer.getY());
+
+            MapA mapA = new MapA();
+            mapA.getMapA().getChildren().add(imageView);
+
+            TranslateTransition transition = new TranslateTransition();
+            transition.setNode(imageView);
+            transition.setDuration(Duration.millis(2000));
+            transition.setCycleCount(1);
+            transition.setByY(lenY);
+            transition.setByX(lenX);
+            transition.play();
+
+            ThisPlayer.getMap().getBuildings().get(index).setHealth(ThisPlayer.getMap().getBuildings().get(index).getHealth() -getPower());
+            Thread.sleep(this.getTimeBetween());
+
+            if ( ThisPlayer.getMap().getBuildings().get(index).getHealth() <= 0){
+                ThisPlayer.getBuildings().add(index , true);
+            }
+        }
+    }
 }

@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,12 +35,15 @@ public class MapA implements Initializable {
     }
 
     @FXML
-    private AnchorPane mapA;
+    private  AnchorPane mapA;
     private boolean nighter = false;
     private boolean warrior = false;
     private boolean redPishi = false;
     private boolean atcher = false;
 
+    public AnchorPane getMapA() {
+        return mapA;
+    }
 
     @FXML
     void press(MouseEvent event) {
@@ -47,8 +51,6 @@ public class MapA implements Initializable {
         double y = event.getY();
         ThisPlayer.setY(y);
         ThisPlayer.setX(x);
-        System.out.println(x);
-        System.out.println(y);
         if (nighter) {
             Image image = new Image("1_knight_.png");
             ImageView imageView = new ImageView(image);
@@ -182,4 +184,5 @@ public class MapA implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
 }

@@ -36,11 +36,11 @@ public class Warrior extends Hero implements Runnable {
     private void archiveToBuildings() {
         int index = nearBuilding();
         boolean trans = false;
-
+        double lenX = 0;
+        double lenY = 0;
         if (ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstX() <= this.getMiddle().getX()) {
             if (ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastX() >= this.getMiddle().getX()) {
                 trans = true;
-                double lenY;
                 if (this.getMiddle().getY() <= 250) {
                     lenY = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() - this.getMiddle().getY() - 20;
                 } else {
@@ -57,7 +57,6 @@ public class Warrior extends Hero implements Runnable {
         if (ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstY() <= this.getMiddle().getY()) {
             if (ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastY() >= this.getMiddle().getY()) {
                 trans = true;
-                double lenX;
                 if (this.getMiddle().getX() >= 300) {
                     lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getLastX() - this.getMiddle().getX() + 15;
                 } else {
@@ -72,8 +71,6 @@ public class Warrior extends Hero implements Runnable {
             }
         }
         if (!trans) {
-            double lenX = 0;
-            double lenY = 0;
             if (this.getMiddle().getX() <= 300) {
                 lenX = ThisPlayer.getMap().getBuildings().get(index).getLocation().getFirstX() - getMiddle().getX() - 15;
                 if (this.getMiddle().getY() <= 250) {
@@ -98,6 +95,8 @@ public class Warrior extends Hero implements Runnable {
             transition.setByY(lenY);
             transition.play();
         }
+        ThisPlayer.setX(ThisPlayer.getX() + lenX);
+        ThisPlayer.setY(ThisPlayer.getY() + lenY);
     }
 
     private int nearBuilding() {

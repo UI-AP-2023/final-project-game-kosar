@@ -1,8 +1,13 @@
 package com.example.controller;
 
+import com.example.model.building.Building;
 import com.example.model.map.Map;
 import com.example.model.player.Player;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+
+import java.util.ArrayList;
 
 public class ThisPlayer {
     static private Player player;
@@ -12,9 +17,18 @@ public class ThisPlayer {
     static private int warriorNumber = 0;
     static private int redPishiNumber = 0;
     static private int nighterNumber = 0;
-    static private  double X ;
-    static private  double Y;
-    static private ImageView imageView ;
+    static private double X;
+    static private double Y;
+    static private ImageView imageView;
+    static private ArrayList<Boolean> buildings = new ArrayList<>();
+
+    public static ArrayList<Boolean> getBuildings() {
+        return buildings;
+    }
+
+    public static void setBuildings(ArrayList<Boolean> buildings) {
+        ThisPlayer.buildings = buildings;
+    }
 
     public static ImageView getImageView() {
         return imageView;
@@ -78,6 +92,9 @@ public class ThisPlayer {
 
     public static void setMap(Map map) {
         ThisPlayer.map = map;
+        for (Building building : map.getBuildings()) {
+            buildings.add(false);
+        }
     }
 
     public static void setIndexEnemy(int indexEnemy) {
