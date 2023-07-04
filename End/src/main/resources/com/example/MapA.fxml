@@ -9,72 +9,45 @@
 
 <AnchorPane fx:id="mapA" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MapA">
    <children>
-      <ImageView fitHeight="500.0" fitWidth="600.0" layoutX="283.0" layoutY="103.0" onMousePressed="#press" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="500.0" fitWidth="600.0" layoutX="31.0" onMousePressed="#press" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@b4ed153e2db605e9129f5eb2c03aaf39.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="main" fitHeight="100.0" fitWidth="100.0" layoutX="250.0" layoutY="200.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="200.0">
+      <ImageView fx:id="b0" fitHeight="100.0" fitWidth="100.0" layoutX="250.0" layoutY="200.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="200.0">
          <image>
             <Image url="@Building2.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="150.0">
+      <ImageView fx:id="b1" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="150.0">
          <image>
             <Image url="@Building1.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="200.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="200.0">
+      <ImageView fx:id="b2" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="200.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="200.0">
          <image>
             <Image url="@Building1.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="250.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="250.0">
+      <ImageView fx:id="b3" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="250.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="250.0">
          <image>
             <Image url="@Building1.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="300.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="300.0">
+      <ImageView fx:id="b4" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="300.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="300.0">
          <image>
             <Image url="@Building1.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="150.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="150.0">
+      <ImageView fx:id="b5" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="150.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="150.0">
          <image>
             <Image url="@Building3.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="590.0" prefHeight="500.0" prefWidth="50.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="586.0" prefHeight="500.0" prefWidth="50.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="586.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-         <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="443.0" onMouseClicked="#back">
-               <image>
-                  <Image url="@Red.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="2.0" layoutY="14.0" onMouseClicked="#nighter" AnchorPane.rightAnchor="0.3999999999999986">
-               <image>
-                  <Image url="@../../night.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="2.0" layoutY="119.0" onMouseClicked="#warrior">
-               <image>
-                  <Image url="@../../warrior.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="2.0" layoutY="236.0" onMouseClicked="#redpishi">
-               <image>
-                  <Image url="@../../redPishi.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="2.0" layoutY="344.0" onMouseClicked="#archer">
-               <image>
-                  <Image url="@../../archer.png" />
-               </image>
-            </ImageView>
-         </children>
          <effect>
             <InnerShadow height="83.05" radius="33.715" width="53.81">
                <color>
@@ -82,20 +55,47 @@
                </color>
             </InnerShadow>
          </effect>
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="4.0" layoutY="131.0" onMouseClicked="#warrior" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="131.0">
+               <image>
+                  <Image url="@../../warrior.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="4.0" layoutY="30.0" onMouseClicked="#nighter" AnchorPane.bottomAnchor="410.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="30.0">
+               <image>
+                  <Image url="@../../night.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="4.0" layoutY="240.0" onMouseClicked="#redpishi" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0">
+               <image>
+                  <Image url="@../../redPishi.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="4.0" layoutY="340.0" onMouseClicked="#archer" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0">
+               <image>
+                  <Image url="@../../archer.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="433.0" onMouseClicked="#back">
+               <image>
+                  <Image url="@Red.png" />
+               </image>
+            </ImageView>
+         </children>
       </AnchorPane>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="300.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="300.0">
+      <ImageView fx:id="b7" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="200.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="200.0">
+         <image>
+            <Image url="@Building4.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="b8" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="250.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="250.0">
+         <image>
+            <Image url="@Building4.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="b6" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="298.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="298.0">
          <image>
             <Image url="@Building3.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="250.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="250.0">
-         <image>
-            <Image url="@Building4.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="200.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="200.0">
-         <image>
-            <Image url="@Building4.jpg" />
          </image>
       </ImageView>
    </children>

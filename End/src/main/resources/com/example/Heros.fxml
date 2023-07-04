@@ -36,7 +36,7 @@
             </InnerShadow>
          </effect>
       </Rectangle>
-      <ImageView fitHeight="53.0" fitWidth="63.0" layoutX="269.0" AnchorPane.rightAnchor="268.4" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="53.0" fitWidth="63.0" layoutX="269.0" onMouseClicked="#back" AnchorPane.rightAnchor="268.4" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@Red.png" />
          </image>
@@ -58,7 +58,7 @@
             </InnerShadow>
          </effect>
       </Rectangle>
-      <Text fill="WHITE" layoutX="388.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buildigs">
+      <Text fill="WHITE" layoutX="388.0" layoutY="33.0" onMouseClicked="#buildings" strokeType="OUTSIDE" strokeWidth="0.0" text="Buildigs">
          <font>
             <Font name="Monospaced Bold" size="32.0" />
          </font>

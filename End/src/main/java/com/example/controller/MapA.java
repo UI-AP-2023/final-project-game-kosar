@@ -29,22 +29,16 @@ import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class MapA implements Initializable {
+    public MapA() {
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ThisPlayer.setMapA(this);
-        ThisPlayer.getImageViews().add(b0);
-        ThisPlayer.getImageViews().add(b1);
-        ThisPlayer.getImageViews().add(b2);
-        ThisPlayer.getImageViews().add(b3);
-        ThisPlayer.getImageViews().add(b4);
-        ThisPlayer.getImageViews().add(b5);
-        ThisPlayer.getImageViews().add(b6);
-        ThisPlayer.getImageViews().add(b7);
-        ThisPlayer.getImageViews().add(b8);
+
     }
+
     @FXML
     private ImageView b0;
-
     @FXML
     private ImageView b1;
 
@@ -101,6 +95,7 @@ public class MapA implements Initializable {
             ThisPlayer.setImageView(imageView);
 
             Nighter nighter1 = new Nighter();
+            ThisPlayer.seterHeroes(nighter1);
             Thread thread = new Thread(nighter1);
             thread.start();
         }
@@ -120,6 +115,7 @@ public class MapA implements Initializable {
             ThisPlayer.setImageView(imageView);
 
             Warrior warrior1 = new Warrior();
+            ThisPlayer.seterHeroes(warrior1);
             Thread thread = new Thread(warrior1);
             thread.start();
         }
@@ -139,6 +135,7 @@ public class MapA implements Initializable {
             ThisPlayer.setImageView(imageView);
 
             Archer archer = new Archer();
+            ThisPlayer.seterHeroes(archer);
             Thread thread = new Thread(archer);
             thread.start();
         }
@@ -158,9 +155,24 @@ public class MapA implements Initializable {
             ThisPlayer.setImageView(imageView);
 
             RedPishi redPishi1 = new RedPishi();
+            ThisPlayer.seterHeroes(redPishi1);
             Thread thread = new Thread(redPishi1);
             thread.start();
         }
+        ThisPlayer.setMapA(this);
+        ArrayList<ImageView> imageViews = new ArrayList<>();
+        imageViews.add(b0);
+        imageViews.add(b1);
+        imageViews.add(b3);
+        imageViews.add(b2);
+        imageViews.add(b4);
+        imageViews.add(b8);
+        imageViews.add(b7);
+        imageViews.add(b5);
+        imageViews.add(b6);
+
+        ThisPlayer.setImageViews(imageViews);
+
     }
 
     @FXML
@@ -207,7 +219,11 @@ public class MapA implements Initializable {
     void back(MouseEvent event) throws IOException {
         for (Player player : Players.getPlayers()) {
             if (player.equals(ThisPlayer.getPlayer())) {
-                player.setLost(player.getLost() + 1);
+                if (ThisPlayer.getWin()) {
+                    player.setWin(player.getWin() + 1);
+                } else {
+                    player.setLost(player.getLost() + 1);
+                }
                 ThisPlayer.setPlayer(player);
                 break;
             }

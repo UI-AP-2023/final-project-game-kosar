@@ -14,7 +14,7 @@ public class RedPishi extends Hero implements Runnable {
     public RedPishi() {
         setName("Red Pishi");
         setHealth(12);
-        setPower(2);
+        setPower(20);
         setTimeBetween(1500);
         setSpeed(25);
         Image image = new Image("2_Woman warrior.png");
@@ -24,17 +24,10 @@ public class RedPishi extends Hero implements Runnable {
 
     @Override
     public void run() {
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+System.out.println("ppppp");
         Middle middle = new Middle(ThisPlayer.getX(), ThisPlayer.getY());
         setMiddle(middle);
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         archiveToBuildings();
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        try {
-            attack();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     private void archiveToBuildings() {
@@ -103,6 +96,12 @@ public class RedPishi extends Hero implements Runnable {
 
         ThisPlayer.setX(ThisPlayer.getX() + lenX);
         ThisPlayer.setY(ThisPlayer.getY() + lenY);
+
+        try {
+            attack();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private int nearBuilding() {
@@ -129,6 +128,7 @@ public class RedPishi extends Hero implements Runnable {
         }
         return 0;
     }
+
     private void attack() throws InterruptedException {
         int index = nearBuilding();
 
@@ -136,23 +136,17 @@ public class RedPishi extends Hero implements Runnable {
             if (getHealth() > 0) {
                 ThisPlayer.getMap().getBuildings().get(index).setHealth(ThisPlayer.getMap().getBuildings().get(index).getHealth() - getPower());
                 Thread.sleep(this.getTimeBetween());
-                System.out.println("2");
                 if (ThisPlayer.getMap().getBuildings().get(index).getHealth() <= 0) {
-                    System.out.println("done");
+                    ThisPlayer.getImageViews().get(index).setVisible(false);
+                    ThisPlayer.getBuildings().remove(index);
                     ThisPlayer.getBuildings().add(index, true);
-                    RedPishi redPishi = new RedPishi();
-                    redPishi.setHealth(this.getHealth());
-                    Thread thread = new Thread(redPishi);
-                    thread.start();
+                    System.out.println("1111111");
+                    this.archiveToBuildings();
+                    System.out.println("222222");
                 }
-            }else {
-                TranslateTransition transition = new TranslateTransition();
-                transition.setNode(ThisPlayer.getImageView());
-                transition.setDuration(Duration.millis(2000));
-                transition.setCycleCount(1);
-                transition.setByX(-ThisPlayer.getX());
-                transition.setByY(500-ThisPlayer.getY());
-                transition.play();
+            } else {
+                ThisPlayer.getImageView().setVisible(false);
+                ThisPlayer.getHeroes().remove(this);
             }
         }
     }

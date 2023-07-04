@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.model.building.Building;
+import com.example.model.hero.Hero;
 import com.example.model.map.Map;
 import com.example.model.map.MapA;
 import com.example.model.player.Player;
@@ -21,6 +22,26 @@ public class ThisPlayer {
     static private ImageView imageView;
     static private ArrayList<Boolean> buildings = new ArrayList<>();
     static private ArrayList<ImageView> imageViews = new ArrayList<>();
+    static private ArrayList<Hero> heroes = new ArrayList<>();
+    static private Boolean win = false;
+
+    public static Boolean getWin() {
+        return win;
+    }
+
+    public static void setWin(Boolean win) {
+        ThisPlayer.win = win;
+    }
+
+    public static void setHeroes(ArrayList<Hero> heroes) {
+        ThisPlayer.heroes = heroes;
+    }
+    public static void seterHeroes (Hero hero){
+        ThisPlayer.getHeroes().add(hero);
+    }
+    public static ArrayList<Hero> getHeroes() {
+        return heroes;
+    }
 
     public static ArrayList<ImageView> getImageViews() {
         return imageViews;

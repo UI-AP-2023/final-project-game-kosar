@@ -37,18 +37,20 @@ public class MapA extends Map {
         buildings.add(mainBuilding);
 
         buildings.add(normalBuilding1);
-        buildings.add(normalBuilding2);
         buildings.add(normalBuilding3);
-        buildings.add(normalBuilding4);
 
+        buildings.add(normalBuilding2);
+        buildings.add(normalBuilding4);
+        buildings.add(bombBuilding2);
+        buildings.add(bombBuilding1);
         buildings.add(archerBuilding1);
         buildings.add(archerBuilding2);
 
-        buildings.add(bombBuilding1);
-        buildings.add(bombBuilding2);
+
+
 
         setBuildings(buildings);
         setName("A");
-        setNumberOfHero(20);
+        setNumberOfHero(15);
     }
 }
